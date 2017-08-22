@@ -326,6 +326,11 @@ copy_rootfs () {
 
 	#ssh keys will now get regenerated on the next bootup
 	touch /tmp/rootfs/etc/ssh/ssh.regenerate
+
+	# tell sna-lgtc-boot package that this will be the first boot on a new
+	# device
+	touch /tmp/rootfs/etc/lgtc/lgtc-first-boot
+
 	flush_cache
 
 	mkdir -p /tmp/rootfs/boot/uboot/ || true
