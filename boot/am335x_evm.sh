@@ -85,7 +85,7 @@ TI_AM335x_BeagleBone_Green)
 		usb_image_file="/var/local/bbg_usb_mass_storage.img"
 	fi
 	;;
-TI_AM335x_BeagleBone_Green_Wireless)
+TI_AM335x_BeagleBone_Green_Wireless|TI_AM335x_SNA-LGTC_*)
 	board_bbgw="enable"
 	has_wifi="enable"
 	has_ethernet="disable"
@@ -485,7 +485,7 @@ if [ ! "x${enable_cape_universal}" = "x" ] ; then
 				TI_AM335x_BeagleBone_Green)
 					overlay="univ-emmc"
 					;;
-				TI_AM335x_BeagleBone_Green_Wireless)
+				TI_AM335x_BeagleBone_Green_Wireless|TI_AM335x_SNA-LGTC_*)
 					if [ -f /usr/local/lib/node_modules/node-red-node-beaglebone/.bbgw-dont-load ] ; then
 						unset overlay
 					else
