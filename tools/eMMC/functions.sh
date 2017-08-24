@@ -767,6 +767,14 @@ _copy_rootfs() {
     flush_cache
   fi
 
+  # tell sna-lgtc-boot package that this will be the first boot on a new
+  # device
+  if [ -d ${tmp_rootfs_dir}/etc/lgtc/ ] ; then
+    echo_broadcast "===> Creating lgtc-first-boot"
+    touch ${tmp_rootfs_dir}/etc/lgtc/lgtc-first-boot
+    flush_cache
+  fi
+
   _generate_uEnv ${tmp_rootfs_dir}/boot/uEnv.txt
 
   _generate_fstab
