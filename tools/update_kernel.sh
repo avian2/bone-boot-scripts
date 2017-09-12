@@ -197,7 +197,7 @@ get_device () {
 			scan_armv7_kernels
 			es8="enabled"
 			;;
-		TI_AM335x_Beagle*)
+		TI_AM335x_*)
 			scan_ti_kernels
 			scan_bone_kernels
 			scan_armv7_kernels
@@ -237,7 +237,7 @@ get_device () {
 		es8="enabled"
 		sgxti335x="enabled"
 		;;
-	TI_AM335x_BeagleBone*)
+	TI_AM335x_*)
 		es8="enabled"
 		sgxti335x="enabled"
 		;;
